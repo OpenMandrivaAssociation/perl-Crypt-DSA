@@ -20,6 +20,7 @@ BuildRequires:  perl(Digest::SHA1)
 BuildRequires:  perl(Crypt::Random)
 BuildRequires:  perl(Crypt::DES_EDE3)
 BuildArch:      noarch
+BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description
 Crypt::DSA is an implementation of the DSA (Digital
