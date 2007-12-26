@@ -1,7 +1,7 @@
 %define module	Crypt-DSA
 %define name	perl-%{module}
 %define version 0.14
-%define release %mkrel 2
+%define release %mkrel 3
 
 Name:		%{name}
 Version:	%{version}
