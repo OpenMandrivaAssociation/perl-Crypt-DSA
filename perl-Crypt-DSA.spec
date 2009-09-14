@@ -15,10 +15,11 @@ Source0:	http://www.cpan.org/modules/by-module/Cryp:/%{upstream_name}-%{upstream
 BuildRequires:	perl-devel
 %endif
 BuildRequires:  perl(Convert::PEM)
+BuildRequires:  perl(Crypt::DES_EDE3)
+BuildRequires:  perl(Crypt::Random)
 BuildRequires:  perl(Data::Buffer)
 BuildRequires:  perl(Digest::SHA1)
-BuildRequires:  perl(Crypt::Random)
-BuildRequires:  perl(Crypt::DES_EDE3)
+BuildRequires:  perl(File::Which)
 BuildArch:      noarch
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}
 
