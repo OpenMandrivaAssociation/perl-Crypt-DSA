@@ -1,19 +1,14 @@
 %define upstream_name	 Crypt-DSA
-%define upstream_version 1.16
+%define upstream_version 1.17
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 2
+Release:    %mkrel 1
 Summary:    DSA Signatures and Key Generation
 License:    GPL+ or Artistic
 Group:      Development/Perl
 Url:        http://search.cpan.org/dist/%upstream_name/
-Source0:	http://www.cpan.org/modules/by-module/Cryp:/%{upstream_name}-%{upstream_version}.tar.gz
-Patch0:		perl-Crypt-DSA-dsaparam.patch
-Patch1:		perl-Crypt-DSA-1.16-meta.patch
-%if %{mdkversion} < 1010
-BuildRequires:	perl-devel
-%endif
+Source0:	http://www.cpan.org/modules/by-module/Crypt/%{upstream_name}-%{upstream_version}.tar.gz
 BuildRequires:  perl(Convert::PEM)
 BuildRequires:  perl(Crypt::DES_EDE3)
 BuildRequires:  perl(Crypt::Random)
@@ -51,12 +46,6 @@ the heavy-duty mathematics underneath are provided by the Math::Pari library.
 
 %prep
 %setup -q -n %{upstream_name}-%{upstream_version}
-
-# Patch for openssl dsaparam 1.0 compatibility (CPAN RT#49668)
-%patch0 -p1
-
-# Fix minimum perl version in META.yml (CPAN RT#58094)
-%patch1 -p1
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
